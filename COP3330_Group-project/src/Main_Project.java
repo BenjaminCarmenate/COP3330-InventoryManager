@@ -9,37 +9,9 @@ import java.util.Scanner;
 
 public class Main_Project {
     public static void main (String[] args){
-    Scanner input = new Scanner(System.in);
-
-    Inventory MainInv = new Inventory();
-
-
-        System.out.println("You currently have " + MainInv.getCheese() + " amount of cheese");
-        System.out.println("You currently have " + MainInv.getLettuce() + " amount of lettuce");
-        System.out.println("You currently have " + MainInv.getBread() + " amount of bread");
-        System.out.println("You currently have " + MainInv.getBacon() + " amount of bacon");
-        System.out.println("You currently have " + MainInv.getTomatoes() + " amount of tomatoes");
-
-        System.out.println();
-
-        System.out.println("Now Making BLT\n");
-        MainInv.setBacon(1);
-        MainInv.setBread(1);
-        MainInv.setCheese(1);
-        MainInv.setLettuce(1);
-        MainInv.setTomatoes(1);
-
-
-        System.out.println("All Done Enjoy!");
-
-        System.out.println("You currently have " + MainInv.getCheese() + " amount of cheese");
-        System.out.println("You currently have " + MainInv.getLettuce() + " amount of lettuce");
-        System.out.println("You currently have " + MainInv.getBread() + " amount of bread");
-        System.out.println("You currently have " + MainInv.getBacon() + " amount of bacon");
-        System.out.println("You currently have " + MainInv.getTomatoes() + " amount of tomatoes");
-
-
-
+    	Scanner input = new Scanner(System.in);
+    	
+    	
     }
 }
 
@@ -49,109 +21,70 @@ class Item
 	private int count;
 	private double unitCost;
 	
-	Item(String Name, int count, double unitCost)
+	Item(String name, int count, double unitCost)
 	{
-		
+		this.name = name;
+		this.count = count;
+		this.unitCost = unitCost;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public void setCount(int count)
+	{
+		this.count = count;
+	}
+	public void setUnitCost(double unitCost)
+	{
+		this.unitCost = unitCost;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public int getCount()
+	{
+		return this.count;
+	}
+	public double getUnitCost()
+	{
+		return this.unitCost;
 	}
 }
 
 class MenuItem
 {
-	
+	Scanner input = new Scanner(System.in);
+
 	private String name;
-	private ArrayList ingredients = new ArrayList();
+	private Item[] ingredients;
 	private double price;
 	
-	MenuItem(String name, ArrayList ingredients, double price)
+	MenuItem(String name, Item[] ingredients, double price)
 	{
 		this.name = name;
 		this.ingredients = ingredients;
 		this.price = price;
 	}
-}
-
-class Inventory {
-
-    private int Cheese;
-    private int Lettuce;
-    private int Bread;
-    private int Tomatoes;
-    private int Bacon;
-
-    Inventory() {
-
-    this.Cheese = 100;
-    this.Lettuce = 100;
-    this.Bread = 200;
-    this.Tomatoes = 100;
-    this.Bacon = 100;
-
-    }
-
-    public int getCheese() {
-        return Cheese;
-    }
-
-    public int getLettuce() {
-        return Lettuce;
-    }
-
-    public int getBread() {
-        return Bread;
-    }
-    
-    public int getTomatoes() {
-        return Tomatoes;
-    }
-
-    public int getBacon() {
-        return Bacon;
-    }
-
-    public void setCheese(int x) {
-        Cheese -= x;
-    }
-
-    public void setLettuce(int x) {
-        Lettuce -= x;
-    }
-
-    public void setBread(int x) {
-        Bread -= x;
-    }
-    
-    public void setTomatoes(int x) {
-        Tomatoes -= x;
-    }
-
-    public void setBacon(int x) {
-        Bacon -= x;
-    }
-
-}
-
-class BLT {
-
-    private int BLTcount = 0;
-    Inventory BLTing = new Inventory();
-
-
-    BLT(int Cheese, int Lettuce, int Bread, int Bacon, int Tomatoes) {            // Makes the BLT and removes ingredients from the inventory
-
-        BLTing.setBacon(1);
-        BLTing.setBread(1);
-        BLTing.setBread(1);
-        BLTing.setLettuce(1);
-        BLTing.setTomatoes(1);
-        BLTcount++;
-
-    }
-
-    public int GetBLTcount() {
-        return BLTcount;
-    }
-
-
-
-
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public void addIngredient()
+	{
+		System.out.println("Add an ingredient from List");
+		for(int i = 0; i < this.; i++)
+		{
+			System.out.println((i+1)+ ". " + ingredients.);
+		}
+	}
 }
