@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class Main_Project {
     public static void main (String[] args){
     Scanner input = new Scanner(System.in);
-    ArrayList InvTransList = new ArrayList();
 
     Inventory MainInv = new Inventory();
 
@@ -44,8 +43,32 @@ public class Main_Project {
     }
 }
 
+class Item 
+{
+	private String name;
+	private int count;
+	private double unitCost;
+	
+	Item(String Name, int count, double unitCost)
+	{
+		
+	}
+}
 
-
+class MenuItem
+{
+	
+	private String name;
+	private ArrayList ingredients = new ArrayList();
+	private double price;
+	
+	MenuItem(String name, ArrayList ingredients, double price)
+	{
+		this.name = name;
+		this.ingredients = ingredients;
+		this.price = price;
+	}
+}
 
 class Inventory {
 
