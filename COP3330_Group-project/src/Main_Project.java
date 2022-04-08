@@ -2,89 +2,54 @@
 // Team Members: James Gonzalez, Ben 
 // Program will function as an inventory manager for a resturant.
 
-
-import java.util.ArrayList;
+import java.lang.*;
+import java.util.*;
 import java.util.Scanner;
 
 
 public class Main_Project {
     public static void main (String[] args){
-    	Scanner input = new Scanner(System.in);
+    	Scanner in = new Scanner(System.in);
+    	Inventory ingredients = new Inventory();
+    	Menu menu = new Menu(ingredients);
+    	int choice;
+    	int flag = 1;
     	
+    	while(flag == 1)
+    	{
+    		System.out.println("What would you like to do\n"
+    						 + "1. add stock\n"
+    						 + "2. add menu item\n"
+    						 + "3. make menu item\n"
+    						 + "4. check inventory\n"
+    						 + "5. show Menu\n"
+    						 + "6. Exit");
+    		choice = in.nextInt();
+    		switch(choice)
+    		{
+    			case 1:
+    				System.out.print("Enter stock item name and count");
+    				String name = in.next();
+    				int count = in.nextInt();
+    				ingredients.addStock(name, count);
+    				break;
+    			case 2:
+    				menu.addMenuItem();
+    				break;
+    			case 3:
+    				menu.makeItem();
+    				break;
+    			case 4:
+    				ingredients.printStock();
+    				break;
+    			case 5:
+    				menu.printMenu();
+    				break;
+    			case 6:
+    				flag = 0;
+    				break;	 				
+    		}
+    	}
     	
     }
-}
-
-class Item 
-{
-	private String name;
-	private int count;
-	private double unitCost;
-	
-	Item(String name, int count, double unitCost)
-	{
-		this.name = name;
-		this.count = count;
-		this.unitCost = unitCost;
-	}
-	
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-	public void setCount(int count)
-	{
-		this.count = count;
-	}
-	public void setUnitCost(double unitCost)
-	{
-		this.unitCost = unitCost;
-	}
-	public String getName()
-	{
-		return this.name;
-	}
-	public int getCount()
-	{
-		return this.count;
-	}
-	public double getUnitCost()
-	{
-		return this.unitCost;
-	}
-}
-
-class MenuItem
-{
-	Scanner input = new Scanner(System.in);
-
-	private String name;
-	private Item[] ingredients;
-	private double price;
-	
-	MenuItem(String name, Item[] ingredients, double price)
-	{
-		this.name = name;
-		this.ingredients = ingredients;
-		this.price = price;
-	}
-	
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-	
-	public String getName()
-	{
-		return this.name;
-	}
-	
-	public void addIngredient()
-	{
-		System.out.println("Add an ingredient from List");
-		for(int i = 0; i < this.; i++)
-		{
-			System.out.println((i+1)+ ". " + ingredients.);
-		}
-	}
 }
