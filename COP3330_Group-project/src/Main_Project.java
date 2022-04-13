@@ -2,8 +2,6 @@
 // Team Members: James Gonzalez, Ben 
 // Program will function as an inventory manager for a resturant.
 
-import java.lang.*;
-import java.util.*;
 import java.util.Scanner;
 
 
@@ -50,6 +48,6 @@ public class Main_Project {
     				break;	 				
     		}
     	}
-    	
+    	in.close();
     }
 }
