@@ -5,14 +5,14 @@ public class Item {
 	private double unitCost;
 	
 
-	Item(String name, int count, double unitCost)
+	Item(String name, int count, double unitCost)       // arg constructor to initialize an Item object with the desired values
 	{
 		this.name = name;
 		this.count = count;
 		this.unitCost = unitCost;
 	}
 	
-	public void setName(String name)
+	public void setName(String name)                    // Getter and Setter methods
 	{
 		this.name = name;
 	}
